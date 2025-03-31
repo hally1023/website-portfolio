@@ -94,7 +94,10 @@ header.sticky {
   vertical-align: middle;
 }
 footer {
-  background: #3498db;
+  background: #113f67; 
+  text-align: center;
+  padding: 5px;
+  color: white;
 }
 .heading {
   position: relative;
@@ -114,6 +117,11 @@ footer {
   margin: 0 auto;
   background: #3498db;
 }
+
+.background-original {
+  background: #FFF;
+}
+
 .background-alt {
   background: #f2f2f5;
 }
@@ -121,7 +129,7 @@ footer {
 #lead {
   position: relative;
   min-height: 500px;
-  max-height: 1200px;
+  max-height: 1250px;
   background: url(../images/lead-bg.jpg);
   background-size: cover;
   overflow: hidden;
@@ -165,7 +173,7 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #208bd3;
+  background: #113f67;
   z-index: 1;
 }
 #skills {
@@ -293,109 +301,7 @@ footer {
   padding: 30px 15px;
   transform: none;
 }
-@media only screen and (max-width: 750px) {
-  #experience-timeline:before,
-  #experience-timeline:after {
-    left: 23px;
-  }
-} 
-@media only screen and (max-width: 992px) {
-  #lead {
-    height: auto;
-    min-height: auto;
-    max-height: auto;
-    padding: 100px 15px;
-  }
-  #lead-content {
-    position: relative;
-    transform: none;
-    left: auto;
-    top: auto;
-  }
-  #lead-content h1 {
-    font-size: 3em;
-  }
-  #lead-content h2 {
-    font-size: 1.75em;
-  }
-  #skills {
-    text-align: center;
-  }
-  #skills p {
-    text-align: left;
-  }
-}
-@media only screen and (max-width: 768px) {
-  header {
-    position: fixed;
-    display: none;
-    z-index: 999;
-    animation: none;
-    bottom: 0;
-    height: 100%;
-  }
-  #mobile-menu-open,
-  #mobile-menu-close {
-    display: block;
-  }
-  #menu {
-    height: 100%;
-    overflow-y: auto;
-    box-shadow: none;
-    border-radius: 0;
-    width: 100%;
-  }
-  #menu li {
-    display: block;
-    margin-bottom: 10px;
-  }
-  #lead-content h1 {
-    font-size: 2em;
-  }
-  #lead-content h2 {
-    font-size: 1.3em;
-  }
-  #lead-content a {
-    padding: 10px 20px;
-  }
-  #lead-down {
-    display: none;
-  }
-  .projects-block h3,
-  .projects-block span {
-    float: none;
-  }
-  .project-image {
-    display: none;
-  }
-  .project-info {
-    position: relative;
-    margin: 0;
-    padding: 30px 15px;
-    top: auto;
-    transform: none;
-  }
-  footer {
-    text-align: center;
-  }
-  .social {
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 480px) {
-  #lead-content h1 {
-    font-size: 1.5em;
-  }
-  #lead-content h2 {
-    font-size: 1em;
-  }
-  #lead-content a {
-    font-size: 0.9em;
-    padding: 5px 10px;
-  }
-}
 
-/* New */
 .contactme-row {
   display: flex;
   gap: 20px;
@@ -543,6 +449,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: #FFF;
 }
 
 .tile:hover {
@@ -576,4 +483,109 @@ footer {
 .tile:hover {
   background-color: #f0f0f0;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  #lead-content h1 {
+    font-size: 1.5em;
+  }
+  #lead-content h2 {
+    font-size: 1em;
+  }
+  #lead-content a {
+    font-size: 0.9em;
+    padding: 5px 10px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #experience-timeline:before,
+  #experience-timeline:after {
+    left: 23px;
+  }
+} 
+
+@media only screen and (max-width: 768px) {
+  header {
+    position: fixed;
+    display: none;
+    z-index: 999;
+    animation: none;
+    bottom: 0;
+    height: 100%;
+  }
+  #mobile-menu-open,
+  #mobile-menu-close {
+    display: block;
+  }
+  #menu {
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+  }
+  #menu li {
+    display: block;
+    margin-bottom: 10px;
+  }
+  #lead-content h1 {
+    font-size: 2em;
+  }
+  #lead-content h2 {
+    font-size: 1.3em;
+  }
+  #lead-content a {
+    padding: 10px 20px;
+  }
+  #lead-down {
+    display: none;
+  }
+  .projects-block h3,
+  .projects-block span {
+    float: none;
+  }
+  .project-image {
+    display: none;
+  }
+  .project-info {
+    position: relative;
+    margin: 0;
+    padding: 30px 15px;
+    top: auto;
+    transform: none;
+  }
+  footer {
+    text-align: center;
+  }
+  .social {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #lead {
+    height: auto;
+    min-height: auto;
+    max-height: auto;
+    padding: 100px 15px;
+  }
+  #lead-content {
+    position: relative;
+    transform: none;
+    left: auto;
+    top: auto;
+  }
+  #lead-content h1 {
+    font-size: 3em;
+  }
+  #lead-content h2 {
+    font-size: 1.75em;
+  }
+  #skills {
+    text-align: center;
+  }
+  #skills p {
+    text-align: left;
+  }
 }
