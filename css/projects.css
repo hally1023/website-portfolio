@@ -42,9 +42,15 @@ img {
 }
 
 #description {
-  padding: 10px;
-  text-align: center;
   border-bottom: 1px solid #dcd9d9;
+  display: flex;
+  justify-content: center;
+}
+
+#description p {
+  width: 100%;
+  max-width: 1600px;
+  text-align: center;
 }
 
 #one,

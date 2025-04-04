@@ -119,6 +119,9 @@ header.sticky {
   font-size: 2.25em;
   margin-bottom: 15px;
 }
+#lead-content h3 {
+  color: #a0cfee;
+}
 .text-column {
   flex: 0 0 80%;
   padding-right: 20px;
