@@ -1,3 +1,13 @@
+// Disable right-click context menu
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+});
+
+// Disable text selection
+document.addEventListener('selectstart', function(event) {
+  event.preventDefault();
+});
+
 // B2B Marketing Plan - Temporary Password
 document.addEventListener("DOMContentLoaded", function () {
     const b2bLink = document.getElementById("b2bMarketingPlan");
@@ -18,4 +28,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
