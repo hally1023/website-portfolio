@@ -17,6 +17,11 @@
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <p>SS GTM Test</p>
+    <script>
+        if (window.location.pathname.endsWith("/")) {
+            window.history.replaceState(null, null, window.location.pathname.slice(0, -1));
+        }
+    </script>
 </body>
 
 </html>
