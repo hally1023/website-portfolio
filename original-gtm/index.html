@@ -1,59 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Original GTM Container</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #A52208;
-      }
-      header {
-        background-color: #A52208;
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-      main {
-        padding: 40px 20px;
-        text-align: center;
-      }
-      footer {
-        background-color: #A52208;
-        color: white;
-        padding: 15px;
-        text-align: center;
-      }
-    </style>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtm.js?id=GTM-K8PJDNZG"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-    </script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <header>
-      <h1>Original GTM Container</h1>
-    </header>
+  <title>Original GTM Container</title>
 
-    <main>
-      <h2>GTM-K8PJDNZG</h2>
-    </main>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #a52208;
+    }
 
-    <footer>
-      <p>&copy; 2026 My Website. All rights reserved.</p>
-    </footer>
-  </body>
+    header {
+      background-color: #a52208;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #a52208;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .contact-section {
+      margin: 30px auto;
+      max-width: 450px;
+      padding: 25px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .call-button {
+      display: inline-block;
+      background-color: #a52208;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 90%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .contact-form button {
+      background-color: #a52208;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover,
+    .call-button:hover {
+      opacity: 0.85;
+    }
+
+    #formMessage {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- Initialize dataLayer BEFORE GTM -->
+  <script>
+    window.dataLayer = window.dataLayer || []
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K8PJDNZG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Original GTM Container</h1>
+  </header>
+
+  <main>
+    <h2>GTM-K8PJDNZG</h2>
+
+    <section class="contact-section">
+      <h3>Call Us</h3>
+      <a href="tel:+14165551234" class="call-button" id="callButton">
+        Call Now: (416) 555-1234
+      </a>
+    </section>
+
+    <section class="contact-section">
+      <h3>Contact Us</h3>
+      <form id="contactForm" class="contact-form">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" />
+        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Submit Form</button>
+      </form>
+      <p id="formMessage"></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 My Website. All rights reserved.</p>
+  </footer>
+
+  <!-- ================================== -->
+  <!-- DATALAYER EVENT TRACKING -->
+  <!-- ================================== -->
+
+  <script>
+    // 1. CLICK-TO-CALL EVENT
+    document
+      .getElementById('callButton')
+      .addEventListener('click', function () {
+        window.dataLayer.push({
+          event: 'click_to_call',
+          phone_number: '+14165551234',
+          link_text: 'Call Now',
+          page_location: window.location.href
+        })
+      })
+
+    // 2. FORM SUBMISSION EVENT
+    document
+      .getElementById('contactForm')
+      .addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        // Push form submission event to GTM
+        window.dataLayer.push({
+          event: 'form_submission',
+          form_id: 'contactForm',
+          form_name: 'Contact Us',
+          page_location: window.location.href
+        })
+
+        // Display confirmation message
+        document.getElementById('formMessage').textContent =
+          'Thank you! Your form has been submitted successfully.'
+
+        // Reset form
+        this.reset()
+      })
+  </script>
+</body>
+
 </html>
